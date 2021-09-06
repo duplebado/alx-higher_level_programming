@@ -1,4 +1,3 @@
-  
 #include "lists.h"
 
 /**
@@ -10,9 +9,6 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *headCache = list;
-
-	if (list == NULL)
-		return (0);
 
 	while (list && list->next)
 	{
