@@ -8,14 +8,15 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *headCache = list;
+	listint_t *current = list, *tmp = list;
 
-	while (list && list->next)
+	while (tmp && tmp->next)
 	{
-		if (list->next == headCache)
-			return (1);
+		current = current->next;
+		tmp = tmp->next->next;
 
-		list = list->next;
+		if (current == tmp)
+			return (1);
 	}
 
 	return (0);
