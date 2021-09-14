@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -45,8 +44,8 @@ listint_t *insert_node(listint_t **head, int number)
 		current_node = current_node->next;
 	}
 
-	current_node->next = new_node;
-	new_node->next = NULL;
+	prev_node->next = new_node;
+	new_node->next = current_node;
 
 	return (new_node);
 }
