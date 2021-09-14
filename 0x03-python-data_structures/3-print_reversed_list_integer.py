@@ -2,6 +2,9 @@
 
 
 def print_reversed_list_integer(my_list=[]):
+    if not isinstance(my_list, list):
+        return
+
     my_list.reverse()
 
     for num in my_list:
