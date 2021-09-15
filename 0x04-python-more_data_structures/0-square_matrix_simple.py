@@ -10,5 +10,3 @@ def square_matrix_simple(matrix=[]):
         return result
 
     return list(map(square_each_cell, matrix))
-
-
