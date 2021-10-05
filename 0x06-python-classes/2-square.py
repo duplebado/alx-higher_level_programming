@@ -7,6 +7,8 @@ class Square:
 
     @__size.setter
     def __size(self, size=0):
+        """ Pythonic setter """
+
         if (type(size) is not int):
             raise TypeError("size must be an integer")
 
