@@ -17,7 +17,7 @@ class Square:
         self.__size = size
 
     def area(self):
-         '''Computes the area of this Square.
+        '''Computes the area of this Square.
         Returns:
             int: The area of this Square.
         '''
@@ -40,7 +40,7 @@ class Square:
         '''Prints a 2D table of the '#' symbol with the size of this square.
         '''
 
-        if (!self.__size)
+        if (!self.__size):
             print("")
         else:
             for i in range(self.size):
