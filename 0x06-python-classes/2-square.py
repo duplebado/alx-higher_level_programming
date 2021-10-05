@@ -5,11 +5,8 @@
 class Square:
     """Represent a square"""
 
-    @property
-    def size(self):
-        return self.__size
-    @size.setter
-    def size(self, size=0):
+    @__size.setter
+    def __size(self, size=0):
         if (type(size) is not int):
             raise TypeError("size must be an integer")
 
