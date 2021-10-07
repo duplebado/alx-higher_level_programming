@@ -7,7 +7,7 @@ def add_integer(a, b=98):
 
     Parameters
     ----------
-        a: int, float 
+        a: int, float
             The first number
         b: int, float, optional
             The second number
@@ -19,7 +19,8 @@ def add_integer(a, b=98):
 
     Note
     ----
-        Parameters/Arguments are typecasted to ints before addition is performed
+        Parameters/Arguments are typecasted to ints before addition
+        is performed
 
     Returns
     -------
