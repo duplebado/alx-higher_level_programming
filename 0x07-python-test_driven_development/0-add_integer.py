@@ -10,7 +10,7 @@ def add_integer(a, b=98):
         a: int, float
             The first number
         b: int, float, optional
-            The second number
+            The second number (default is 98)
 
     Raises
     ------
