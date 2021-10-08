@@ -1,0 +1,52 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation`` function
+-----------------------------------
+
+
+``text_indentation`` prints a text with 2 new lines after each of these characters: ".", "?" and ":"
+----------------------------------------------------------------------------------------------------
+
+First, import ``text_indentation`` from the ``5-text_indentation`` module:
+
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Test Case 1, a string is passed as argument:
+
+	>>> text_indentation("Lorem ipsum dolor sit amet? consectetur adipiscing elit.")
+	Lorem ipsum dolor sit amet?
+	<BLANKLINE>
+	consectetur adipiscing elit.
+	<BLANKLINE>
+
+	>>> text_indentation("Lorem ipsum dolor sit amet? consectetur adipiscing elit.    sakamanje")
+        Lorem ipsum dolor sit amet?
+        <BLANKLINE>
+        consectetur adipiscing elit.
+        <BLANKLINE>
+	sakamanje
+
+Test Case 2, a parameter of type string is not passed as argument:
+
+	>>> text_indentation(9)
+	Traceback (most recent call last):
+        TypeError: text must be a string
+
+	>>> text_indentation(0.45543)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+	>>> text_indentation(["a string in a list"])
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+	>>> text_indentation(None)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+Test Case 3, missing argument:
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
