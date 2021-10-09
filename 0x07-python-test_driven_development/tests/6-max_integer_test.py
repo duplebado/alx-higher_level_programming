@@ -18,6 +18,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([3, 49, 45, 102, 499]), 499)
         self.assertEqual(max_integer([1, 2, 3, 4, 2, 4, 4]), 4)
         self.assertEqual(max_integer([10]), 10)
+        self.assertEqual(max_integer([10, 8, 6, 4, 3, 1]), 10)
 
     def test_empty_list(self):
         """Test an empty list."""
