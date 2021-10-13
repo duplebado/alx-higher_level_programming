@@ -5,22 +5,29 @@
 class Rectangle:
     """
         A class to represent a rectangle
+
         Attributes
         ----------
+
             __width : int
                 width of the rectangle
+
             __height : int
                 height of the rectangle
+
         Setters
         -------
             width(self, value):
                 sets new width of the rectangle
+
             height(self, value):
                 sets new height of the rectangle
+
         Getters
         -------
             def width(self):
                 returns the width of the rectangle
+
             def height(self):
                 returns the height of the rectangle
     """
@@ -28,10 +35,12 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
             Initialize a new Rectangle.
+
             Parameters
             ----------
             width: int, optional
                 width of the rectangle (default is 0)
+
             height: int, optional
                 height of the rectangle (default is 0)
         """
@@ -42,6 +51,7 @@ class Rectangle:
     def width(self):
         """
             width attribute getter of the rectangle.
+
             Returns
             -------
                 int
@@ -53,14 +63,17 @@ class Rectangle:
     def width(self, value):
         """
             width setter of the rectangle.
+
             Parameter
             ---------
                 value: int
                     new width of the rectangle
+
             Raises
             ------
                 TypeError
                     If @value is not an integer
+
                 ValueError
                     If @value is less than 0
         """
@@ -76,6 +89,7 @@ class Rectangle:
     def height(self):
         """
             height attribute getter of the rectangle.
+
             Returns
             -------
                 int
@@ -87,14 +101,17 @@ class Rectangle:
     def height(self, value):
         """
             height setter of the rectangle.
+
             Parameter
             ---------
                 value: int
                     new height of the rectangle
+
             Raises
             ------
                 TypeError
                     If @value is not an integer
+
                 ValueError
                     If @value is less than 0
         """
@@ -109,6 +126,7 @@ class Rectangle:
     def area(self):
         """
             Calculate area of the rectangle.
+
             Returns
             -------
                 area of the rectangle
@@ -118,6 +136,7 @@ class Rectangle:
     def perimeter(self):
         """
             Calculate perimeter of the rectangle.
+
             Returns
             -------
                 perimeter of the rectangle
@@ -128,8 +147,9 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """ string representation of the rectangle with
-            the character '#'
+        """
+            String representation of the rectangle with
+            the character '#' generator
 
             Returns
             -------
