@@ -148,6 +148,7 @@ class Rectangle:
         """
             String representation of the rectangle with
             the character '#' generator
+
             Returns
             -------
                 str
@@ -161,4 +162,6 @@ class Rectangle:
         for i in range(self.__height - 1):
             result += ("#" * self.__width) + '\n'
 
-        return result += ("#" * self.__width)
+        result += ("#" * self.__width)
+
+        return result
