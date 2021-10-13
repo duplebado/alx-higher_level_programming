@@ -169,11 +169,13 @@ class Rectangle:
             return result
 
         result = []
+        sym = str(self.print_symbol)
+
         for i in range(self.__height - 1):
-            [result.append(self.print_symbol) for j in range(self.__width)]
+            [result.append(sym) for j in range(self.__width)]
             result.append("\n")
 
-        [result.append(self.print_symbol) for j in range(self.__width)]
+        [result.append(sym) for j in range(self.__width)]
 
         return ("".join(result))
 
