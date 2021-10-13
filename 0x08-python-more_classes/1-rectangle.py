@@ -5,7 +5,7 @@
 class Rectangle:
     """
         A class to represent a rectangle
-        
+
         Attributes
         ----------
             __width : int
@@ -21,7 +21,7 @@ class Rectangle:
 
             height(self, value):
                 sets new height of the rectangle
-        
+
         Getters
         -------
             def width(self):
