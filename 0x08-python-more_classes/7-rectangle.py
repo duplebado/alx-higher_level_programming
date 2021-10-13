@@ -167,7 +167,7 @@ class Rectangle:
 
         if self.__height == 0 or self.__width == 0:
             return result
-        
+
         result = []
         for i in range(self.__height - 1):
             [result.append(self.print_symbol) for j in (self.__width)]
