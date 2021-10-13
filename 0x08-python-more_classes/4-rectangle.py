@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Defines a class Rectangle.
-"""
+""" Defines a class Rectangle"""
 
 
 class Rectangle:
@@ -9,7 +8,6 @@ class Rectangle:
 
         Attributes
         ----------
-
             __width : int
                 width of the rectangle
 
@@ -69,7 +67,6 @@ class Rectangle:
             ---------
                 value: int
                     new width of the rectangle
-
             Raises
             ------
                 TypeError
@@ -165,4 +162,19 @@ class Rectangle:
         for i in range(self.__height - 1):
             result += ("#" * self.__width) + '\n'
 
-        return result += ("#" * self.__width)
+        result += ("#" * self.__width)
+
+        return result
+
+    def __repr__(self):
+        """
+            String representation of the rectangle to be
+            able to recreate a new instance by using eval()
+
+            Returns
+            -------
+                str
+                    string representation of the rectangle to be able to
+                    recreate a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
