@@ -237,3 +237,20 @@ class Rectangle:
             return rect_1
 
         return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """
+            Creates a new instance of Rectangle with
+            height and width equal, hence, a SQUARE
+            Parameter
+            ---------
+                size : int, optional
+                    size is the width and height of the sqaure to be
+                    created. size == height == width
+            Returns
+            -------
+                Rectangle
+                    a new instance of Rectangle with height and width equal
+        """
+        return cls(size, size)
