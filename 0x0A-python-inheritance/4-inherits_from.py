@@ -25,4 +25,4 @@ def inherits_from(obj, a_class):
                 true or false
 
     """
-    return isstance(obj, a_class)
+    return isinstance(obj, a_class)
