@@ -2,7 +2,7 @@
 """Defines a class Rectangle ."""
 
 
-class Rectangle (BaseGeometry):
+class Rectangle(BaseGeometry):
     """ class Rectangle  """
 
     def __init__(self, width, height):
