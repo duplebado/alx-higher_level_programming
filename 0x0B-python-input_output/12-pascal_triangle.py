@@ -28,7 +28,7 @@ def pascal_triangle(n):
             if j == 0 or j == len(result[i - 1]) - 1:
                 loop_result.append(1)
             else:
-                loop_result.append(result[i - 2][j - 1] + result[i - 2][j])
+                loop_result.append(result[i - 1][j - 1] + result[i - 1][j])
 
         result.append(loop_result)
 
