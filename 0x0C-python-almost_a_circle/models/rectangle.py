@@ -42,7 +42,17 @@ class Rectangle(Base):
             ---------
                 width : int
                     width of the instance of the rectangle
+
+            Raises
+            ------
+                TypeError
+                    if @width is not an integer
+
+                ValueError
+                    if @width is less than or equal to zero
         """
+        self.integer_validator("width", width)
+        self.less_than_or_equal_zero_validator("width", width)
         self.__width = width
 
     @property
@@ -64,7 +74,17 @@ class Rectangle(Base):
             ---------
                 height : int
                     height of the instance of the rectangle
+
+            Raises
+            ------
+                TypeError
+                    if @height is not an integer
+
+                ValueError
+                    if @height is less than or equal to zero
         """
+        self.integer_validator("height", height)
+        self.less_than_or_equal_zero_validator("height", height)
         self.__height = height
 
     @property
@@ -86,7 +106,17 @@ class Rectangle(Base):
             ---------
                 x : int
                     x of the instance of the rectangle
+
+            Raises
+            ------
+                TypeError
+                    if @x is not an integer
+
+                ValueError
+                    if @x is less than zero
         """
+        self.integer_validator("x", x)
+        self.less_than_zero_validator("x", x)
         self.__x = x
 
     @property
@@ -102,11 +132,83 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
-        """ width setter
+        """ y setter
 
             Parameter
             ---------
                 y : int
                     y of the instance of the rectangle
+
+            Raises
+            ------
+                TypeError
+                    if @y is not an integer
+
+                ValueError
+                    if @y is less than zero
         """
+
+        self.integer_validator("y", y)
+        self.less_than_zero_validator("y", y)
         self.__y = y
+
+    def integer_validator(self, name, value):
+        """
+            Validates an integer
+
+            Parameters
+            ----------
+                name : str
+                    name of the integer to be validated
+
+                value: int
+                    integer to be validated
+            Raises
+            ------
+                TypeError
+                    if @value is not an integer
+        """
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(name))
+
+    def less_than_or_equal_zero_validator(self, name, value):
+        """
+            Validates that an integer is not less than
+            or equal zero
+
+            Parameters
+            ----------
+                name : str
+                    name of the integer to be validated
+
+                value: int
+                    integer to be validated
+
+            Raises
+            ------
+                ValueError
+                    if @value is less than or equal to zero
+        """
+        if value <= 0:
+            raise TypeError("{:s} must be > 0".format(name))
+
+    def less_than_zero_validator(self, name, value):
+        """
+            Validates that an integer is not less than
+            zero
+
+            Parameters
+            ----------
+                name : str
+                    name of the integer to be validated
+
+                value: int
+                    integer to be validated
+
+            Raises
+            ------
+                ValueError
+                    if @value is less than zero
+        """
+        if value <= 0:
+            raise TypeError("{:s} must be >= 0".format(name))
