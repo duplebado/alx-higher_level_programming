@@ -3,19 +3,9 @@
 
 
 def pascal_triangle(n):
-    """ Creates  pascal's traingle
-
-        Parameter
-        ---------
-            n : int
-                height of the triangle
-
-        Returns
-        -------
-            list
-                list of lists of ints
+    """Represent Pascal's Triangle of size n.
+    Returns a list of lists of integers representing the triangle.
     """
-
     result = []
 
     if n <= 0:
