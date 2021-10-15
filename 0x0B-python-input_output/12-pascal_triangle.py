@@ -24,7 +24,7 @@ def pascal_triangle(n):
     while i < n:
         loop_result = []
 
-        for j, range(len(result[i - 1]) + 1):
+        for j in range(len(result[i - 1]) + 1):
             if j == 0 or j == len(result[i - 1]) - 1:
                 loop_result.append(1)
             else:
