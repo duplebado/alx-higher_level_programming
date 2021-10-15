@@ -27,9 +27,8 @@ def pascal_triangle(n):
         for j, num in enumerate(result[i - 1]):
             if j == 0 or j == len(result[i - 1]) - 1:
                 loop_result.append(1)
-                continue
-
-            loop_result.append(result[i - 2][j - 1] + result[i - 2][j])
+            else:
+                loop_result.append(result[i - 2][j - 1] + result[i - 2][j])
 
         result.append(loop_result)
 
