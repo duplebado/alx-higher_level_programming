@@ -59,3 +59,24 @@ class Base:
 
         with open(filename, "w", encoding="utf-8") as f:
             f.write(to_json_string(obj_dicts))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ get list of the JSON string representation
+            
+            Paramter
+            --------
+                json_string : str
+                    string representing a list of dictionaries
+
+            Returns
+            -------
+                list
+                    the list of the JSON string representation
+                    @json_string
+        """
+
+        if json_string is None or json_string == []:
+            return []
+
+        return json.loads(json_string)
