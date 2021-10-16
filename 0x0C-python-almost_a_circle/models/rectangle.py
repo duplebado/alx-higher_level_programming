@@ -212,3 +212,14 @@ class Rectangle(Base):
         """
         if value <= 0:
             raise TypeError("{:s} must be >= 0".format(name))
+
+    def area(self):
+        """ Calculate area of rectangle instance
+
+            Returns
+            -------
+                int
+                    area of rectangle instance
+        """
+
+        return self.__height * self.__width
