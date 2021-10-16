@@ -80,3 +80,30 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Creates an instance of a class
+
+            Parameter
+            ---------
+                **dictionary : dict
+                    keyworded variable length of arguments
+
+            Returns
+            -------
+                class instance
+                    an instance with all attributes already
+                    set
+        """
+
+        new_instance = None
+
+        if cls is Rectangle:
+            new_instance = cls(1, 2)
+        else:
+            new_instance = cls(1)
+
+        new_instance.update(**dictionary)
+
+        return new_instance
