@@ -52,13 +52,49 @@ class Square(Rectangle):
             Parameter
             ---------
                 size : int
-                    size of the instance of the rectangle
-            Raises
-            ------
-                TypeError
-                    if @size is not an integer
-                ValueError
-                    if @size is less than or equal to zero
+                    size of the instance of the square
         """
         self.width = size
         self.height = size
+
+    def update(self, *args, **kwargs):
+        """ Updates the Square instance
+
+            Parameter
+            ---------
+                *args : tuple
+                    1st argument should be the id attribute
+                    2nd argument should be the size attribute
+                    3rd argument should be the x attribute
+                    4th argument should be the y attribute
+
+                **kwargs : dict
+                    key-value pairs of attributes
+        """
+
+        args_does_not_exist = True
+
+        for i, arg in enumerate(args):
+            args_does_not_exist = False
+
+            if i == 0:
+                self.id = arg
+            elif i == 1:
+                self.width = arg
+                self.height = arg
+            elif i == 2:
+                self.x = arg
+            elif i == 3:
+                self.y = arg
+
+        if args_does_not_exist:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.width = value
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
