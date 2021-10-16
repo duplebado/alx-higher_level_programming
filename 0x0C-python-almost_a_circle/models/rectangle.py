@@ -245,20 +245,27 @@ class Rectangle(Base):
                     self.id, self.__x, self.__y, self.__width, self.__height
                 )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Updates the Rectangle instance
 
             Parameter
             ---------
-                args : tuple
+                *args : tuple
                     1st argument should be the id attribute
                     2nd argument should be the width attribute
                     3rd argument should be the height attribute
                     4th argument should be the x attribute
                     5th argument should be the y attribute
+
+                **kwargs : dict
+                    key-value pairs of attributes
         """
 
+        args_does_not_exist = True
+
         for i, arg in enumerate(args):
+            args_does_not_exist = False
+
             if i == 0:
                 self.id = arg
             elif i == 1:
@@ -269,3 +276,16 @@ class Rectangle(Base):
                 self.x = arg
             elif i == 4:
                 self.y = arg
+
+        if args_does_not_exist:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
