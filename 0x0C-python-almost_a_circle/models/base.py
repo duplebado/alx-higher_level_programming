@@ -1,6 +1,7 @@
 #!/usr/bin/python
 """ Defines Base class. """
 import json
+import csv
 
 
 class Base:
@@ -123,12 +124,79 @@ class Base:
             dict_list = None
 
             with open(filename) as f:
-                dict_list = json.loads(f.read())
+                dict_list = cls.from_json_string(f.read())
 
             result = []
 
             for dict_item in dict_list:
                 result.append(cls.create(dict_item))
+
+            return result
+        except:
+            return []
+
+    def save_to_file_csv(cls, list_objs):
+        """ writes the serialized csv format of @list_objs
+            to a file
+
+            Parameter
+            ---------
+                list_objs : list
+                    list of instances who inherits from this class
+                    (i.e Base clase) e.g list of Rectangle or list
+                    of Square instances
+        """
+        filename = cls.__name__ + ".csv"
+        
+        with open(filename, "w", newline="") as f:
+            writer = csv.writer(f)
+
+            for obj in list_objs:
+                obj = obj.to_dictionary()
+                row = []
+                row.append(obj["id"])
+
+                if cls is Rectangle:
+                    row.append(obj["width"])
+                    row.append(obj["height"])
+                else:
+                    row.append(obj["size"])
+
+                row.append(obj["x"])
+                row.append(obj["y"])
+
+                writer.writerow(row)
+
+    def load_from_file_csv(cls):
+        """ deserialize csv format of @list_objs
+            to a file
+        """
+        filename = cls.__name__ + ".csv"
+
+        try:
+            dict_list = None
+
+            with open(filename) as f:
+                csv_list = csv.reader(filename, delimiter=',')
+
+            result = []
+
+            for csv_item in dict_list:
+                if cls is Rectangle:
+                    result.append(cls.create({
+                        "id": csv_item[0],
+                        "width": csv_item[1],
+                        "height": csv_item[2],
+                        "x": csv_item[3],
+                        "y": csv_item[4]
+                        }))
+                else:
+                    result.append(cls.create({
+                        "id": csv_item[0],
+                        "size": csv_item[1],
+                        "x": csv_item[2],
+                        "y": csv_item[3]
+                        }))
 
             return result
         except:
