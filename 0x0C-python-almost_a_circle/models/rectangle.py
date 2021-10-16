@@ -210,7 +210,7 @@ class Rectangle(Base):
                 ValueError
                     if @value is less than zero
         """
-        if value <= 0:
+        if value < 0:
             raise TypeError("{:s} must be >= 0".format(name))
 
     def area(self):
