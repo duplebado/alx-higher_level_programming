@@ -214,7 +214,7 @@ class Rectangle(Base):
             raise TypeError("{:s} must be >= 0".format(name))
 
     def area(self):
-        """ Calculate area of rectangle instance
+        """ Calculate area of Rectangle instance
 
             Returns
             -------
@@ -223,3 +223,10 @@ class Rectangle(Base):
         """
 
         return self.__height * self.__width
+
+    def display(self):
+        """ Prints Rectangle instance with the
+            character #
+        """
+        for i in range(self.__height):
+            print("#" * self.__width)
