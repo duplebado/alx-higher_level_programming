@@ -63,7 +63,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ get list of the JSON string representation
-            
+
             Paramter
             --------
                 json_string : str
@@ -107,3 +107,29 @@ class Base:
         new_instance.update(**dictionary)
 
         return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """ get a list of instances
+
+            Returns
+            -------
+                list
+                    a list of instances
+        """
+        filename = cls.__name__ + ".json"
+
+        try:
+            dict_list = None
+
+            with open(filename) as f:
+                dict_list = json.loads(f.read())
+
+            result = []
+
+            for dict_item in dict_list:
+                result.append(cls.create(dict_item))
+
+            return result
+        except:
+            return []
