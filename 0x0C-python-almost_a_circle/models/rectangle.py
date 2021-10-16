@@ -17,7 +17,7 @@ class Rectangle(Base):
                 y :
                 id :
         """
-        super.__init__(id)
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -244,3 +244,28 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                     self.id, self.__x, self.__y, self.__width, self.__height
                 )
+
+    def update(self, *args):
+        """ Updates the Rectangle instance
+
+            Parameter
+            ---------
+                args : tuple
+                    1st argument should be the id attribute
+                    2nd argument should be the width attribute
+                    3rd argument should be the height attribute
+                    4th argument should be the x attribute
+                    5th argument should be the y attribute
+        """
+
+        for i, arg in enumerate(args):
+            if i == 0:
+                self.id = arg
+            elif i == 1:
+                self.width = arg
+            elif i == 2:
+                self.height = arg
+            elif i == 3:
+                self.x = arg
+            elif i == 4:
+                self.y = arg
