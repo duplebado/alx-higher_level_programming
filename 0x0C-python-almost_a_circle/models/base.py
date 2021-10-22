@@ -147,7 +147,7 @@ class Base:
                     of Square instances
         """
         filename = cls.__name__ + ".csv"
-        
+
         with open(filename, "w", newline="") as f:
             writer = csv.writer(f)
 
