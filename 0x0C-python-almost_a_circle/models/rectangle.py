@@ -228,8 +228,17 @@ class Rectangle(Base):
         """ Prints Rectangle instance with the
             character #
         """
+        print_value = ""
+
+        if (self.x):
+            print_value += " " * self.x
+
+        print_value += "#" * self.__width
+
+        [print("") for y in range(self.y)]
+
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(print_value)
 
     def __str__(self):
         """ String representation of the Rectangle
