@@ -130,7 +130,7 @@ class Base:
             result = []
 
             for dict_item in dict_list:
-                result.append(cls.create(dict_item))
+                result.append(cls.create(**dict_item))
 
             return result
         except:
