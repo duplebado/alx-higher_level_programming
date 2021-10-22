@@ -175,14 +175,14 @@ class Base:
         filename = cls.__name__ + ".csv"
 
         try:
-            dict_list = None
+            csv_list = None
 
             with open(filename) as f:
                 csv_list = csv.reader(filename, delimiter=',')
 
             result = []
 
-            for csv_item in dict_list:
+            for csv_item in csv_list:
                 if cls is Rectangle:
                     result.append(cls.create({
                         "id": csv_item[0],
