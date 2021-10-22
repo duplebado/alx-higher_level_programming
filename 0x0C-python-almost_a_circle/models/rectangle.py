@@ -190,7 +190,7 @@ class Rectangle(Base):
                     if @value is less than or equal to zero
         """
         if value <= 0:
-            raise TypeError("{:s} must be > 0".format(name))
+            raise ValueError("{:s} must be > 0".format(name))
 
     def less_than_zero_validator(self, name, value):
         """
@@ -211,7 +211,7 @@ class Rectangle(Base):
                     if @value is less than zero
         """
         if value < 0:
-            raise TypeError("{:s} must be >= 0".format(name))
+            raise ValueError("{:s} must be >= 0".format(name))
 
     def area(self):
         """ Calculate area of Rectangle instance
