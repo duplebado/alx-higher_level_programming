@@ -59,7 +59,7 @@ class Base:
         filename = cls.__name__ + ".json"
 
         with open(filename, "w", encoding="utf-8") as f:
-            f.write(to_json_string(obj_dicts))
+            f.write(cls.to_json_string(obj_dicts))
 
     @staticmethod
     def from_json_string(json_string):
