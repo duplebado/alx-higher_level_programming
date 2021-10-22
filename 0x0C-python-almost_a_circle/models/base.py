@@ -157,7 +157,7 @@ class Base:
                 row = []
                 row.append(obj["id"])
 
-                if cls is Rectangle:
+                if cls.__name__ == "Rectangle":
                     row.append(obj["width"])
                     row.append(obj["height"])
                 else:
