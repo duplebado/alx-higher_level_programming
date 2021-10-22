@@ -101,7 +101,7 @@ class Base:
 
         new_instance = None
 
-        if cls is Rectangle:
+        if cls.__name__ is "Rectangle":
             new_instance = cls(1, 2)
         else:
             new_instance = cls(1)
