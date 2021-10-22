@@ -53,8 +53,9 @@ class Base:
         """
         obj_dicts = []
 
-        for obj in list_objs:
-            obj_dicts.append(obj.to_dictionary())
+        if list_objs is not None:
+            for obj in list_objs:
+                obj_dicts.append(obj.to_dictionary())
 
         filename = cls.__name__ + ".json"
 
