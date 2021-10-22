@@ -178,7 +178,7 @@ class Base:
             csv_list = None
 
             with open(filename) as f:
-                csv_list = csv.reader(filename, delimiter=',')
+                csv_list = csv.reader(f, delimiter=',')
 
             result = []
 
